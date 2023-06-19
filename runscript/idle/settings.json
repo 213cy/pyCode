@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "D:\\Anaconda3\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+
+    // "python.linting.pylintArgs": ["--errors-only","--generated-members=turtle.*,tt.*,tracer" ]
+    // "python.linting.pylintArgs": ["--errors-only","--generated-members=turtle.*,tt.*,tracer" ]
+    "python.defaultInterpreterPath": "D:\\Anaconda3\\python.exe ('base':conda)",
+}

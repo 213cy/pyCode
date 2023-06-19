@@ -1,0 +1,14 @@
+curl 'https://live.bilibili.com/5520542' \
+  -H 'authority: live.bilibili.com' \
+  -H 'pragma: no-cache' \
+  -H 'cache-control: no-cache' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'sec-fetch-site: none' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'sec-fetch-dest: document' \
+  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8' \
+  -H $'cookie: buvid3=155B0A80-A099-FA20-3389-6344D7C2711E95646infoc; _uuid=4C31FA9F-C88F-36110-B910E-BA9247C7995345452infoc; buvid4=2A0DB74D-647F-C445-725E-19AC482663B562971-022043016-grEc33TlGpC8bl1t9DXZGg%3D%3D; buvid_fp_plain=undefined; DedeUserID=95646000; DedeUserID__ckMd5=78ca4e2360d6e904; hit-dyn-v2=1; LIVE_BUVID=AUTO3016520350052760; i-wanna-go-back=-1; b_ut=5; go_old_video=1; fingerprint3=7ec4168cbbf9c55a0d62623a83075445; fingerprint=e9193052b3bd91b249237ebd6ebe02e4; is-2022-channel=1; blackside_state=1; CURRENT_BLACKGAP=1; b_nut=100; dy_spec_agreed=1; rpdid=|(YYR|um|lu0J\'uYY)l)YR~); AMCV_98CF678254E93B1B0A4C98A5%40AdobeOrg=1176715910%7CMCMID%7C35130866472924013203684883487680602469%7CMCAAMLH-1669468857%7C11%7CMCAAMB-1669468857%7C6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y%7CMCOPTOUT-1668871258s%7CNONE%7CvVersion%7C5.4.0; nostalgia_conf=2; header_theme_version=CLOSE; home_feed_column=4; hit-new-style-dyn=1; CURRENT_FNVAL=4048; bp_article_offset_95646000=776134026901585900; CURRENT_QUALITY=64; buvid_fp=e9193052b3bd91b249237ebd6ebe02e4; CURRENT_PID=e7ef9450-cd27-11ed-8332-0fee09e78ca1; bp_video_offset_95646000=778063373457686500; SESSDATA=4252e923%2C1695620760%2Cf2488%2A31; bili_jct=8a8a9c8540f06dded0ee237647bce295; sid=8snaphil; _dfcaptcha=a9de6f561217656b4feb5edd73835f11; GIFT_BLOCK_COOKIE=GIFT_BLOCK_COOKIE; b_lsid=D26699E6_1872D38AFEB; PVID=2' \
+  --compressed

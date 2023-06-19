@@ -1,0 +1,44 @@
+11/15/2022 01:19:11 AM Using proactor: IocpProactor
+11/15/2022 01:19:11 AM Using proactor: IocpProactor
+11/15/2022 01:19:11 AM = connection is CONNECTING
+11/15/2022 01:19:11 AM > GET /sub HTTP/1.1
+11/15/2022 01:19:11 AM > Host: broadcastlv.chat.bilibili.com:2244
+11/15/2022 01:19:11 AM > Upgrade: websocket
+11/15/2022 01:19:11 AM > Connection: Upgrade
+11/15/2022 01:19:11 AM > Sec-WebSocket-Key: g5tT6Qgidx1t/ijPOgdokQ==
+11/15/2022 01:19:11 AM > Sec-WebSocket-Version: 13
+11/15/2022 01:19:11 AM > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+11/15/2022 01:19:11 AM > User-Agent: Python/3.8 websockets/10.4
+11/15/2022 01:19:11 AM < HTTP/1.1 101 Switching Protocols
+11/15/2022 01:19:11 AM < Upgrade: websocket
+11/15/2022 01:19:11 AM < Connection: Upgrade
+11/15/2022 01:19:11 AM < Sec-WebSocket-Accept: WoZfNKcD4FxwJZa6pRU9M+6vkkw=
+11/15/2022 01:19:11 AM = connection is OPEN
+11/15/2022 01:19:11 AM > BINARY 00 00 00 5d 00 10 00 00 00 00 00 07 00 00 00 00 ... 22 31 2e 34 2e 30 22 7d [93 bytes]
+11/15/2022 01:19:11 AM < BINARY 00 00 00 1a 00 10 00 00 00 00 00 08 00 00 00 00 ... 63 6f 64 65 22 3a 30 7d [26 bytes]
+11/15/2022 01:19:27 AM < BINARY 00 00 03 f5 00 10 00 00 00 00 00 05 00 00 00 00 ... 38 32 31 35 33 5d 7d 7d [1013 bytes]
+11/15/2022 01:19:31 AM % sending keepalive ping
+11/15/2022 01:19:31 AM > PING 9e 7d 9c 29 [binary, 4 bytes]
+11/15/2022 01:19:31 AM < PONG 9e 7d 9c 29 [binary, 4 bytes]
+11/15/2022 01:19:31 AM % received keepalive pong
+11/15/2022 01:19:41 AM > BINARY 00 00 00 1f 00 10 00 01 00 00 00 02 00 00 00 01 ... 20 4f 62 6a 65 63 74 5d [31 bytes]
+11/15/2022 01:19:41 AM < BINARY 00 00 00 14 00 10 00 01 00 00 00 03 00 00 00 00 ... 20 4f 62 6a 65 63 74 5d [35 bytes]
+11/15/2022 01:19:41 AM < PING '' [0 bytes]
+11/15/2022 01:19:41 AM > PONG '' [0 bytes]
+11/15/2022 01:19:51 AM % sending keepalive ping
+11/15/2022 01:19:51 AM > PING 71 65 be 61 [binary, 4 bytes]
+11/15/2022 01:19:51 AM < PONG 71 65 be 61 [binary, 4 bytes]
+11/15/2022 01:19:51 AM % received keepalive pong
+11/15/2022 01:19:57 AM < BINARY 00 00 03 4d 00 10 00 00 00 00 00 05 00 00 00 00 ... 36 38 32 31 32 5d 7d 7d [845 bytes]
+11/15/2022 01:20:11 AM > BINARY 00 00 00 1f 00 10 00 01 00 00 00 02 00 00 00 01 ... 20 4f 62 6a 65 63 74 5d [31 bytes]
+11/15/2022 01:20:11 AM % sending keepalive ping
+11/15/2022 01:20:11 AM > PING 61 22 8d 87 [binary, 4 bytes]
+11/15/2022 01:20:11 AM < BINARY 00 00 00 14 00 10 00 01 00 00 00 03 00 00 00 00 ... 20 4f 62 6a 65 63 74 5d [35 bytes]
+11/15/2022 01:20:11 AM < PING '' [0 bytes]
+11/15/2022 01:20:11 AM > PONG '' [0 bytes]
+11/15/2022 01:20:11 AM = connection is CLOSING
+11/15/2022 01:20:11 AM > CLOSE 1000 (OK) [2 bytes]
+11/15/2022 01:20:11 AM < PONG 61 22 8d 87 [binary, 4 bytes]
+11/15/2022 01:20:11 AM % received keepalive pong
+11/15/2022 01:20:11 AM < CLOSE 1000 (OK) [2 bytes]
+11/15/2022 01:20:11 AM = connection is CLOSED
