@@ -1,0 +1,19 @@
+<link href="https://vjs.zencdn.net/8.3.0/video-js.min.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+
+
+<video-js id="vid1"  width="640"  class="vjs-default-skin" controls>
+<!-- autoplay muted -->
+  <source src="https://yunqivedio.alicdn.com/2017yq/v2/0x0/96d79d3f5400514a6883869399708e11/96d79d3f5400514a6883869399708e11.m3u8" type="application/x-mpegURL">
+</video-js>
+
+<hr>
+use video-js element to prevent the video element from playing natively without videojs work.
+<br>
+For the sake of user experience, Chrome has disabled autoplay of videos before interact with the document first
+
+<script>
+var player = videojs('vid1');
+player.play();
+</script>
+

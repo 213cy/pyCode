@@ -1,1 +1,0 @@
-python upload_download.py --directory F:\lover\picture

@@ -4,6 +4,11 @@ import win32con
 import time
 
 
+# df = pd.read_csv(fileA,sep='\t',header=1,encoding='gb2312')
+
+# temp=df.columns
+# t=[datetime.strptime(k,'%m/%d/%Y') for k in df[temp[0]]]
+# print( b'\xc8\xd5\xc6\xda'.decode('gb2312').encode('gb2312') )
 
 hwnd = win32gui.FindWindow('Chrome_WidgetWin_1','广发操盘手')
 x,y=100,200

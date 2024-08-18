@@ -1,0 +1,4 @@
+python -m http.server 8001
+python mp4player.py -d E:\Desktop
+python upload_download.py
+python upload_download.py --directory F:\lover\picture

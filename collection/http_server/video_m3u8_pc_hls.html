@@ -1,0 +1,27 @@
+<script src="hls.min.js"></script>
+<video id="video" controls width="100%"></video>
+<button type="button" onclick="changeText(this)"> play! </button>
+<script>
+
+function changeText(id) {
+    var video = document.getElementById('video');
+    if (Hls.isSupported() ) {  // & 0 
+        id.innerHTML = "Hls.isSupported() = true";
+        var hls = new Hls();
+        hls.loadSource('https://yunqivedio.alicdn.com/2017yq/v2/0x0/96d79d3f5400514a6883869399708e11/96d79d3f5400514a6883869399708e11.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+        });
+    } else {
+        id.innerHTML = "Hls.isSupported() = false";
+        video.src = 'https://yunqivedio.alicdn.com/2017yq/v2/0x0/96d79d3f5400514a6883869399708e11/96d79d3f5400514a6883869399708e11.m3u8';
+        video.addEventListener('loadedmetadata', function() {
+            video.play();
+        });
+    }
+}
+</script>
+
+HTML5点播m3u8(hls)格式视频
+https://www.helloweba.net/javascript/571.html

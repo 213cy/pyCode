@@ -204,13 +204,14 @@ def main():
     signal.signal(signal.SIGINT, signal_handler)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--directory', '-d', default=os.getcwd(),
+    parser.add_argument('--directory', '-d', default=os.path.expanduser('~')+'\\Desktop',
                         help='Specify alternative directory '
                         '[default:current directory]')
     args = parser.parse_args()
     print(args)
 
-    args.directory = 'F:\\lover\\video'
+    # args.directory = os.getcwd()
+    # args.directory = 'F:\\lover\\video'
     httpHandle = type('dummyhandler', (SimpleHTTPRequestHandler,),
                       {'directory': args.directory})
 
@@ -219,9 +220,8 @@ def main():
     # httpd = HTTPServer(('127.0.0.1', 8000), httpHandle)
     httpd = HTTPServer(('0.0.0.0', 8000), httpHandle)
 
-    print("server_version: " + httpHandle.server_version +
-          ", python_version: " + httpHandle.sys_version)
     print("Serving http on:  http://0.0.0.0:8000/", httpd.socket.getsockname())
+    print("\" Ctrl + c \" to stop server ")
     print(33*'=')
     httpd.serve_forever()
 

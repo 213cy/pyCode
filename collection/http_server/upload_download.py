@@ -230,13 +230,13 @@ def main():
     signal.signal(signal.SIGINT, signal_handler)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--directory', '-d', default=os.getcwd(),
+    parser.add_argument('--directory', '-d', default=os.path.expanduser('~')+'\\Desktop',
                     help='Specify alternative directory '
                     '[default:current directory]')
     args = parser.parse_args()
     print(args)
 
-    args.directory='F:\\lover\\video'
+    # args.directory=os.getcwd()
     httpHandle = type('ccc',(SimpleHTTPRequestHandler,),{'directory':args.directory})
 
     httpd = HTTPServer( ('0.0.0.0', 8000), httpHandle)
