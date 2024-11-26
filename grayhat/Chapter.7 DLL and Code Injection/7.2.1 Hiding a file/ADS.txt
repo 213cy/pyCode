@@ -1,0 +1,4 @@
+# NTFS Alternate Data Stream£¨ADS£©
+# https://www.cnblogs.com/zUotTe0/p/13455971.html
+
+https://sudonull.com/post/137593-Gray-Hat-Python-DLL-and-Code-Injection

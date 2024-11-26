@@ -1,0 +1,2 @@
+python file_hider.py hostfile.txt ADS.txt
+dir /r

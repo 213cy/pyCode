@@ -1,0 +1,34 @@
+﻿
+===============================================
+
+ffprobe -v quiet -i out.mp4 -show_format 
+
+ffprobe -v quiet -i out.mp4 -show_entries format=duration:stream_tags=duration:stream=duration -print_format json 
+
+ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 out.mp4
+
+ffprobe -v error -i out.mp3 -show_entries format=duration -of default=noprint_wrappers=1:nokey=1
+
+===============================================
+http://trac.ffmpeg.org/wiki/Slideshow
+
+ffmpeg -r 60 -f image2 -s 1280x720 -i pic%05d.png -i MP3FILE.mp3 -vcodec libx264 -acodec copy OUTPUT.mp4 
+
+ffmpeg -framerate 1/5 -i angel.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4
+
+ffmpeg -framerate 1/5 -f image2 -i angel.png -r 30 -i angel.mp3 -c:v libx264 -c:a copy -map 0:v:0 -map 1:a:0 out.mp4
+
+ffmpeg -framerate 1/2 -f image2 -i angel%d.png -r 30 -i angel.mp3 -pix_fmt yuv420p -c:v libx264 -c:a copy out.mp4
+
+----------------------------------
+ffmpeg -loop 1 -i angel.png -i angel.mp3 -pix_fmt yuv420p -c:v libx264 -c:a copy -t 3.25 out.mp4
+ffmpeg -hide_banner -loop 1 -i angel.png -i angel.mp3  -pix_fmt yuv420p -c:v libx264 -c:a copy -t 3.184  out.mp4 -y
+ffmpeg -hide_banner -loglevel warning -y -loop 1 -i angel.png -i angel.mp3 -pix_fmt yuv420p -c:v libx264 -af apad -shortest -t 3 00.ts
+
+
+===================================================
+https://trac.ffmpeg.org/wiki/Concatenate
+
+ffmpeg -i "concat:00.mp4|01.mp4|02.mp4|03.mp4" -c copy output.mp4
+
+ffmpeg -i "concat:00.ts|01.ts|02.ts|03.ts" -c copy output.mp4

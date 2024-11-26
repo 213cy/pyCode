@@ -1,0 +1,36 @@
+C:\Windows\System32\calc.exe
+hDLL (0)= 0x63fc0000  hKernel32 = 0x77930000 
+[2024-11-26 13:25:32.884] >>>    DLL process attach
+[2024-11-26 13:25:58.621]           <<< DLL thread detach
+[2024-11-26 13:25:58.662]       >>>    DLL thread attach
+[2024-11-26 13:25:58.738]       >>>    DLL thread attach
+[2024-11-26 13:26:00.777]       >>>    DLL thread attach
+[2024-11-26 13:26:04.841]           <<< DLL thread detach
+[2024-11-26 13:26:04.851]           <<< DLL thread detach
+[2024-11-26 13:26:04.862]    <<< DLL process detach
+C:\Windows\System32\calc.exe
+hDLL (0)= 0x63fc0000  hKernel32 = 0x77930000 
+[2024-11-26 13:28:24.616] >>>    DLL process attach
+[2024-11-26 13:28:26.859]           <<< DLL thread detach
+[2024-11-26 13:28:26.900]       >>>    DLL thread attach
+[2024-11-26 13:28:26.937]       >>>    DLL thread attach
+[2024-11-26 13:28:28.785]       >>>    DLL thread attach
+[2024-11-26 13:28:31.937]           <<< DLL thread detach
+[2024-11-26 13:28:31.956]           <<< DLL thread detach
+[2024-11-26 13:28:31.962]    <<< DLL process detach
+C:\Windows\System32\calc.exe
+hDLL (0)= 0x63fc0000  hKernel32 = 0x77930000 
+[2024-11-26 13:31:24.630] >>>    DLL process attach
+[2024-11-26 13:31:27.268]           <<< DLL thread detach
+[2024-11-26 13:31:29.153]       >>>    DLL thread attach
+[2024-11-26 13:31:31.969]           <<< DLL thread detach
+[2024-11-26 13:31:31.991]           <<< DLL thread detach
+[2024-11-26 13:31:31.999]    <<< DLL process detach
+C:\Windows\System32\calc.exe
+hDLL (0)= 0x63fc0000  hKernel32 = 0x77930000 
+[2024-11-26 13:37:47.099] >>>    DLL process attach
+[2024-11-26 13:37:49.375]           <<< DLL thread detach
+[2024-11-26 13:37:50.761]        >>>    DLL thread attach
+[2024-11-26 13:37:53.209]           <<< DLL thread detach
+[2024-11-26 13:37:53.225]           <<< DLL thread detach
+[2024-11-26 13:37:53.234]    <<< DLL process detach
