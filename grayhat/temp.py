@@ -7,6 +7,7 @@ kernel32 = WinDLL('kernel32', use_last_error=True)
 
 kernel32= windll.kernel32
 
+
 # ++++++++++++++++++++++++++++
 
 
@@ -26,15 +27,6 @@ wintypes.DOUBLE
 
 
 # # ++++++++++++++++++++++++++++++++++++++++++++
-
-
-# TH32CS_SNAPTHREAD = 0x00000004
-# kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
-# snapshot = kernel32.CreateToolhelp32Snapshot(  TH32CS_SNAPTHREAD, pid)
-# print(f"snapshot={snapshot:016x}")
-# kernel32.CloseHandle(snapshot)
-# exit()
-
 
 
 # def handler(signum, frame):

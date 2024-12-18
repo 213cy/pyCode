@@ -1,4 +1,21 @@
-﻿
+﻿单元音短元音	
+IPA63	        i	ə	ɔ	u	ʌ	e	æ	 
+IPA88	        ɪ	ə	ɒ	ʊ	ʌ	e	æ	 
+KK  	        ɪ	ə	ɑ	ʊ	ʌ	ɛ	æ	 
+单元音长元音	
+IPA63	        i:	ə:	ɔ:	u:	ɑ:	 	 	 
+IPA88	        i:	ɜ:	ɔ:	u:	ɑ:	 	 	 
+KK  	        i	ɜ	ɔ	u	ɑ	 	 	 
+双元音	
+IPA63	        ei	ai	ɔi	au	əu	iə	ɛə	uə
+IPA88	        eɪ	aɪ	ɔɪ	aʊ	əʊ	ɪə	eə	ʊə
+KK  	        e	aɪ	ɔɪ	aʊ	o	ɪr	ɛr	ʊr
+清浊成对辅音	
+清辅音      	p	t	k	f	θ	s	ʃ	tʃ
+浊辅音	        b	d	ɡ	v	ð	z	ʒ	dʒ
+其它辅音    	h	m	n	ŋ	l	r	j	w
+                dr	dz	tr	ts	 	 	 	 
+
 ===============================================
 
 ffprobe -v quiet -i out.mp4 -show_format 
@@ -32,3 +49,8 @@ https://trac.ffmpeg.org/wiki/Concatenate
 ffmpeg -i "concat:00.mp4|01.mp4|02.mp4|03.mp4" -c copy output.mp4
 
 ffmpeg -i "concat:00.ts|01.ts|02.ts|03.ts" -c copy output.mp4
+
+
+===================================================
+ffmpeg -loop 1 -i background.png -f lavfi -t 1 -i anullsrc=sample_rate=44100 -c:v libx264 -pix_fmt yuv420p -c:a aac -shortest output_video.mp4
+ffmpeg -loop 1 -i background.png -f lavfi -t 1 -i anullsrc -pix_fmt yuv420p -shortest output_video.mp4
