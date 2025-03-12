@@ -1,7 +1,7 @@
 from configuration import config
 
-steps = [3,4,5]
-steps = [6]
+steps = [3]
+steps = [4,5,6]
 
 # step 1.
 # edit configuration.py
@@ -41,4 +41,12 @@ if 6 in steps:
         line_list = f.readlines()
     words = (line.split(' ')[0] for line in line_list if line != '\n')
     d=sorted(set(words))
-    print(' '.join(d))
+    substract = ' '.join(d)
+    print(substract)
+
+# https://skillapp.co/blog/10-easy-ways-to-copy-text-to-clipboard-with-python-a-comprehensive-guide/
+    import win32clipboard
+    win32clipboard.OpenClipboard()
+    win32clipboard.EmptyClipboard()
+    win32clipboard.SetClipboardText(substract)
+    win32clipboard.CloseClipboard()

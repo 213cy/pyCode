@@ -12,6 +12,7 @@ import time
 
 async def fetch_info(url):
     async with httpx.AsyncClient() as client:
+        print(url)
         response = await client.get(url)
         return response
 

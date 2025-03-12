@@ -1,21 +1,19 @@
 import asyncio
 import edge_tts
-import os
 
-text_list = ["clothes", "close"]
+choice = 2
 
-if not os.path.exists("sounds"):
-    os.makedirs("sounds")
+if choice == 1 :
+    async def amain() -> None:
+        text_list = ["clothes", "close"]
+        VOICE = "en-GB-RyanNeural"
+        tasks = [edge_tts.Communicate(str, VOICE).save(
+            f"test.mp3") for str in text_list]
+        await asyncio.gather(*tasks)
 
-async def amain() -> None:
-    VOICE = "en-GB-RyanNeural"
-    tasks = [edge_tts.Communicate(str, VOICE).save(
-        f"sounds/{str}.mp3") for str in text_list]
-    await asyncio.gather(*tasks)
+    asyncio.run(amain())
 
-asyncio.run(amain())
 
-print('done!')
 
 # ============================
 
@@ -25,11 +23,13 @@ async def amain0():
     tasks = [asyncio.sleep(t) for t in range(1, 3)]
     await asyncio.gather(*tasks)
 
-async def amain1() -> None:
-    TEXT = "这个男人叫小帅，他正躲在屋顶，而他的女友金发妹正在找他"
-    VOICE = "zh-CN-YunxiNeural"
-    communicate = edge_tts.Communicate(TEXT, VOICE)
-    await communicate.save("test.mp3")
+if choice == 2 :
+    async def amain1() -> None:
+        TEXT = """这个男人叫小帅，他正躲在屋顶，而他的女友金发妹正在找他"""
+        VOICE = "zh-CN-YunxiNeural"
+        communicate = edge_tts.Communicate(TEXT, VOICE)
+        await communicate.save("test.mp3")
+    asyncio.run(amain1())
 
 async def amain2() -> None:
     # await edge_tts.list_voices()
@@ -44,3 +44,9 @@ async def amain2() -> None:
     tasks = [edge_tts.Communicate(TEXT, v["Name"]).save(
         f"sounds/{v['ShortName']}.mp3") for v in voice]
     await asyncio.gather(*tasks)
+
+
+# ============================
+
+
+print('done!')

@@ -6,31 +6,6 @@
 # https://api.dictionaryapi.dev/api/v2/entries/en/imperative
 
 
-import httpx
-import asyncio
-
-
-async def fetch_info(url):
-    async with httpx.AsyncClient() as client:
-        response = await client.get(url)
-        return response
-
-
-async def main(block_list, query_url):
-    groups = []
-    for block in block_list:
-        tasks = [fetch_info(query_url+line[0]) for line in block]
-        groups.append(asyncio.gather(*tasks))
-
-    # await asyncio.gather(
-    # *(
-    # asyncio.gather(  *(fetch() for line in block)   )
-    # for block in block_list
-    # )
-    # )
-    response_groups = await asyncio.gather(*groups)
-    return response_groups
-
 
 def sanitize(phone):
     if isinstance(phone, int):
@@ -39,29 +14,15 @@ def sanitize(phone):
     # '[əˈkædˌəˌmi]''[ˈdɹiːˌmi]''[ˈfɪlmi]'
     # [əˈkadəmi]/əˈkæd.ə.mi/ /ˈdriː.mi/
     # p = p.replace('\'', 'ˈ').replace('.', 'ˌ').replace('a', 'æ')
-    p = p.replace('ɹ', 'r').replace('.', '')
-    p = p.replace('l̩', 'l')
+
+    p = p.replace('\'', 'ˈ')
+    p = p.replace('.', '')
+    p = p.replace('ɹ', 'r').replace('ɾ', 't')
+    p = p.replace('l̩', 'l').replace('ɫ̩','l')
     p = p.replace('i', 'ɪ').replace('ɪː', 'iː')
-    p = p.replace('ɛ', 'e')
+    p = p.replace('ɛ', 'e')  # IPA88
     phone = f"[{p}]"
     return phone
-
-
-def parse_response(response):
-    if response.status_code == 200:
-        word_info = response.json()[0]
-
-        if 'phonetic' in word_info:
-            phone = sanitize(word_info['phonetic'])
-            return (phone, 1)
-        else:
-            for ind, phonetic in enumerate(word_info.get('phonetics')):
-                if 'text' in phonetic and phonetic.get('text'):
-                    phone = sanitize(phonetic['text'])
-                    return (phone, ind+1)
-            return (response.reason_phrase, 9)
-    else:
-        return (response.reason_phrase, 0)
 
 
 def create_words_file(config):
@@ -91,21 +52,19 @@ def create_words_file(config):
     # words =[]
     # for block in block_list : words.extend([k[0] for k in block])
     words = [k[0] for block in block_list for k in block]
+    print(len(words))
+    print(words)
+
+    response_list = ['[ˈbraɪə(r)]', '[braɪb]', '[brɪk]', '[braɪd]', '[ˈbraɪdˌɡruːm]', "['braɪdz.meɪd]", '[brɪdʒ]', '[briːf]', '[ˈbriːfˌkeɪs]', "[brɪ'ɡeɪd]", '[braɪt]', '[ˈbrɪljənt]', '[brɪŋ]', "[brɪ'ket]", "['brɪt(ə)l]"]
+    response_list = ['[ˈbraɪə(r)]', '[braɪt]', '[braɪb]', "[brɪ'ɡeɪd]", '[braɪd]', '[ˈbraɪdˌɡruːm]', "['braɪdz.meɪd]", '[brɪdʒ]', '[briːf]', '[ˈbriːfˌkeɪs]', '[ˈbrɪljənt]', '[brɪŋ]', '[brɪk]', "[brɪ'ket]", '[kəʊl]', "['brɪt(ə)l]"]
     words_ind = 0
-
-    response_group_list = asyncio.run(main(block_list, config.QUERYURL))
-
-
-    for block, response_list in zip(block_list, response_group_list):
-        for line, response in zip(block, response_list):
-            (phone, stat) = parse_response(response)
-            line.insert(1, phone)
-            words[words_ind] += f' {stat}'
+    for block in block_list:
+        for line in block:
+            line.insert(1,sanitize(response_list[words_ind]))
+            # line.insert(1,response_list[words_ind])
             words_ind += 1
 
 
-    for k in words:
-        print(k)
     # ========================
     def fun(lines): return '\n'.join(' '.join(line) for line in lines)
     block_text = map(fun, block_list)

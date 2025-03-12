@@ -1,5 +1,5 @@
 import colorsys
-
+import hashlib
 
 def show_benchcolor():
     benchRGB_str = ['ffffff', 'e79c19', '303070']
@@ -12,8 +12,10 @@ def show_benchcolor():
     print(approximate)
 
 
-def color_set(letter, con):
-    h0 = (ord(letter)-ord('a'))/(ord('z')-ord('a'))
+def color_set(chara_str, con):
+    # h0 = (ord(chara_str)-ord('a'))/(ord('z')-ord('a'))
+    str_digest = hashlib.md5(chara_str.encode()).hexdigest()
+    h0 = int(str_digest[:2],16)/255
     hls_h = (h0-0.33, 0.90, 0.25)
     hls_f = (h0+0.33, 0.50, 0.80)
     hls_f = (h0+0.33, 0.55, 0.80)
@@ -30,8 +32,8 @@ def color_set(letter, con):
 config = type('Config', (), {})
 # ===============================
 
-config.project_folder_name = 'bbddffggppttzzle'
-config.regexp = ["/(.)\\1le$/","/[bdfgptz]{2}le$/"]
+config.project_folder_name = 'bri'
+config.regexp = ["/^bri/"]
 
 # ===============================
 
@@ -61,4 +63,4 @@ config.HEIGHT = 720
 
 # ===============================
 
-color_set(config.project_folder_name[0], config)
+color_set(' '.join(config.regexp), config)
