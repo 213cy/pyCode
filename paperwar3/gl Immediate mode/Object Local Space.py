@@ -77,7 +77,7 @@ def display(cm: drawer_manager):
 
     cm.draw(True)
 
-def _display(cm: drawer_manager):
+def display2(cm: drawer_manager):
     glLoadIdentity()
     # cm.draw(True)
 
@@ -145,6 +145,7 @@ if __name__ == "__main__":
 
 
         display(obj)
+        display2(obj)
 
         # glFlush()
         pygame.display.flip()
