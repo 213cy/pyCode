@@ -124,7 +124,7 @@ class Page:
                                  stroke_width=1, fill=self.config.colorword)
 
                 for i, f in enumerate(self.images[ind]):
-                    img_source = Image.open(f"{self.config.root}/{f}")
+                    img_source = Image.open(f"{self.config.project_path}/{f}")
                     xx = self.x0 + self.forewidths[ind] + \
                         self.rearwidths[ind] + i * 84 + 20
                     img.paste(img_source, (int(xx), int(yy-32)))

@@ -1,7 +1,7 @@
 from configuration import config
 
-steps = [3]
-steps = [4,5,6]
+steps = [3,4,5]
+steps = [6]
 
 # step 1.
 # edit configuration.py

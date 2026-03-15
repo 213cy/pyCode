@@ -23,6 +23,8 @@ def test():
     print(f"GL_VERSION : {restr.decode()}")
     restr=glGetString(GL_SHADING_LANGUAGE_VERSION)
     print(f"GL_SHADING_LANGUAGE_VERSION : {restr.decode()}")
+    # restr=glGetString(GL_EXTENSIONS)
+    # print(f"GL_EXTENSIONS : {restr.decode()}")
     print(55*"-")
 
 

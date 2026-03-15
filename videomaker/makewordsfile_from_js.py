@@ -15,7 +15,7 @@ def sanitize(phone):
     # [əˈkadəmi]/əˈkæd.ə.mi/ /ˈdriː.mi/
     # p = p.replace('\'', 'ˈ').replace('.', 'ˌ').replace('a', 'æ')
 
-    p = p.replace('\'', 'ˈ')
+    p = p.replace('\'', 'ˈ').replace('(','').replace(')','')
     p = p.replace('.', '')
     p = p.replace('ɹ', 'r').replace('ɾ', 't')
     p = p.replace('l̩', 'l').replace('ɫ̩','l')
@@ -55,8 +55,8 @@ def create_words_file(config):
     print(len(words))
     print(words)
 
-    response_list = ['[ˈbraɪə(r)]', '[braɪb]', '[brɪk]', '[braɪd]', '[ˈbraɪdˌɡruːm]', "['braɪdz.meɪd]", '[brɪdʒ]', '[briːf]', '[ˈbriːfˌkeɪs]', "[brɪ'ɡeɪd]", '[braɪt]', '[ˈbrɪljənt]', '[brɪŋ]', "[brɪ'ket]", "['brɪt(ə)l]"]
-    response_list = ['[ˈbraɪə(r)]', '[braɪt]', '[braɪb]', "[brɪ'ɡeɪd]", '[braɪd]', '[ˈbraɪdˌɡruːm]', "['braɪdz.meɪd]", '[brɪdʒ]', '[briːf]', '[ˈbriːfˌkeɪs]', '[ˈbrɪljənt]', '[brɪŋ]', '[brɪk]', "[brɪ'ket]", '[kəʊl]', "['brɪt(ə)l]"]
+    response_list = ['[pə(r)ˈsiːv]', "['pɜːsept]", '[pə(r)ˈsent]', '[ˈpɜː(r)tʃəs]', '[ˈpɔː(r)s(ə)lɪn]', "['tʃaɪnə]", "[sə'ræmɪk]", "[prɪ'ses]", '[prɪˈsiːd]', "['presɪdəns]", "['presɪdənt]", "['prezɪdənt]", '[ˈprez(ə)nt]', '[ˈprez(ə)ns]', '[prɪˈzɜː(r)v]', '[preˈstiːʒ]', '[ˈpriːsept]', '[ˌɪntə(r)ˈsept]', "['preʃəs]", "[prɪ'saɪs]", "[prɪ'saɪsli]", "[prɪ'sɪʒ(ə)n]", '[prɒˈsperəti]', "['prɒspekt]", "[.ekspek'teɪʃ(ə)n]", '[ˈprɒˌsteɪt]', '[prəˈsiːdʒə(r)]', '[ˈprəʊses]', '[ˈprəʊˌsesə(r)]', '[prəˈsiːd]', "['præktɪk(ə)l]", "['præktɪs]", '[prɪˈkɔːʃ(ə)n]', '[ˈpreʃə(r)]', '[prɪˈzjuːm]', '[praɪs]', "['praɪsləs]", "['prɪk(ə)l]", "['pɪk(ə)l]", '[ˈprɪz(ə)m]', "['prɪz(ə)n]"]
+    
     words_ind = 0
     for block in block_list:
         for line in block:

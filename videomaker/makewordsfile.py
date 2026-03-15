@@ -31,6 +31,7 @@ def sanitize(phone):
     # p = p.replace('\'', 'ˈ').replace('.', 'ˌ').replace('a', 'æ')
 
     p = p.replace('.', '')
+    p = p.replace('oː', 'ɔ:').replace('ɘ','ɪ')
     p = p.replace('ɹ', 'r').replace('ɾ', 't')
     p = p.replace('l̩', 'l').replace('ɫ̩','l')
     p = p.replace('i', 'ɪ').replace('ɪː', 'iː')

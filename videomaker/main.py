@@ -77,9 +77,9 @@ if __name__ == "__main__":
 
     maker = Project(config)
     # maker.pages[0].set_audio_length()
-    # maker.make_one_page_video(maker.pages[4])
+    maker.make_one_page_video(maker.pages[1])
     # maker.make_one_page_video(maker.pages[7])
 
     # maker.make_page_video()
-    maker.make_final_video()
+    # maker.make_final_video()
     print("done !!!")

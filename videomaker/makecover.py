@@ -48,12 +48,14 @@ def create_cover_image(config):
                  stroke_width=1, fill=median_color)
 
 
-    font = ImageFont.truetype(config.FONTNAME_EN, size=250)
+    font_size = 250
+    font_size = 160
+    font = ImageFont.truetype(config.FONTNAME_EN, size=font_size)
     Idrawer.text((xx, yy-50), config.regexp[0],
                  anchor="mm", font=font,
-                 stroke_width=36, fill=config.colorbackground)
+                 stroke_width=int(font_size/8), fill=config.colorbackground)
 
-    font = ImageFont.truetype(config.FONTNAME_EN, size=250)
+    font = ImageFont.truetype(config.FONTNAME_EN, size=font_size)
     Idrawer.text((xx, yy-50), config.regexp[0],
                  anchor="mm", font=font,
                  stroke_width=1, fill=config.colorword)
